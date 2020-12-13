@@ -1,12 +1,12 @@
 ## Overview
-
+edit page
 Unify Page Language (UPL), a feature of the Unify framework, is a language used for declaring a group of components and specifying the relationship between them. The basic unit of the language is a UPL descriptor which is used to declare a single component and its attribute values. Multiple of these units can be grouped together to define more complex components.
 
 <img src="images/descriptor.png" alt="Descriptor" width="560" align="center">
 
 Figure 1: UPL Descriptor Breakdown
 
-A descriptor is a string that begins with the exclamation symbol ‘!’ followed by a component type with optional instance ID (depending on component type) and a set of UPL attribute-value pairs. The component type and ID pair is separated by the ‘:’ symbol. An attribute and value pair is also separated by the same symbol. All pairs are separated by any whitespace symbol. An attribute can have different types of values some of which are specified by special tokens. Special tokens begin with the ‘$’ symbol followed by a reserved character, an opening brace, content string and finally a closing brace.
+A descriptor is a string that begins with the exclamation symbol ï¿½!ï¿½ followed by a component type with optional instance ID (depending on component type) and a set of UPL attribute-value pairs. The component type and ID pair is separated by the ï¿½:ï¿½ symbol. An attribute and value pair is also separated by the same symbol. All pairs are separated by any whitespace symbol. An attribute can have different types of values some of which are specified by special tokens. Special tokens begin with the ï¿½$ï¿½ symbol followed by a reserved character, an opening brace, content string and finally a closing brace.
 
 ## UPL Component
 
@@ -47,7 +47,7 @@ Box box = (Box) getUplComponent(getSessionLocale(),
 
 ## UPL Document
 
-A UPL document is a set of one or more UPL descriptors grouped to define a page. A descriptor can span more than one line in a UPL document. Comments can also be included. A comment begins with double ‘/’ symbol and spans a single line only.
+A UPL document is a set of one or more UPL descriptors grouped to define a page. A descriptor can span more than one line in a UPL document. Comments can also be included. A comment begins with double ï¿½/ï¿½ symbol and spans a single line only.
 
 
 ## Special Tokens
@@ -64,7 +64,7 @@ A UPL document is a set of one or more UPL descriptors grouped to define a page.
 | $g{...} | A guarded value token. Content string is name of value that is set in a foreign UPL document. Used for enforcing the value of an attribute of a component descriptor in a UPL document is set in another UPL document. |
 | $n{...} | A name token. Content string is concatenated with name of component binded to UPL document. |
 | $e{...} | An element type token. Content string is concatenated with name of component in UPL descriptor. |
-| $t{...} | A theme token. Content string is concatenated with user’s current theme resource path. Used for specifying a resource based on theme. |
+| $t{...} | A theme token. Content string is concatenated with userï¿½s current theme resource path. Used for specifying a resource based on theme. |
 | $j{...} | A Java constant token. Content string is the full name of a static string constant. Used for specifying a Java string constant that exists in the application class path. |
 | $o{...} | A context scope token. Content string is the name of a resource. Used to indicate resource should be fetched from context scope. |
 | $x{...} | A container setting token value. Content string is the name a container setting. Used to indicate value should be fetched from container setting. |
