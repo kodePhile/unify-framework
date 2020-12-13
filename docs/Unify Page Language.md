@@ -1,5 +1,5 @@
 ## Overview
-edit page
+
 Unify Page Language (UPL), a feature of the Unify framework, is a language used for declaring a group of components and specifying the relationship between them. The basic unit of the language is a UPL descriptor which is used to declare a single component and its attribute values. Multiple of these units can be grouped together to define more complex components.
 
 <img src="images/descriptor.png" alt="Descriptor" width="560" align="center">
