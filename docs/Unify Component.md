@@ -1,5 +1,5 @@
 ## Overview
-test component change
+
 A software component is a software unit that performs a well-defined part of the functionality of a software system.
 It has an interface behind which it hides the complexity of its implementation thereby allowing for the production of systems that are more manageable.
 
