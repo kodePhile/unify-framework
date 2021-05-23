@@ -3,6 +3,10 @@ pipeline {
   stages {
 
     stage('Install openjdk-8') {
+      agent docker {
+        reuseNode false
+        image 'ubuntu'
+      }
       steps {
         echo 'Installing...'
         sudo apt install openjdk-8-jre
