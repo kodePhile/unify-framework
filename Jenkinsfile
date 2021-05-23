@@ -1,8 +1,17 @@
 pipeline {
   agent any
   stages {
+
+    stage('Install openjdk-8') {
+      steps {
+        echo 'Installing...'
+        sudo apt install openjdk-8-jre
+        echo 'Installation successful!'
+      }
+    }
+
     stage('Build') {
-      steps{
+      steps {
         echo 'Building...'
         mvn clean install -DskipTests=true
         echo 'Build successful!'
