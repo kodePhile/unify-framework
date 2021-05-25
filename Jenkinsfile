@@ -10,6 +10,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building Project...'
+        sh 'mkdir /logs && cd /logs'
+        sh 'touch application.log && cd ..'
         sh 'mvn clean install'
         echo 'Build successful!'
       }
