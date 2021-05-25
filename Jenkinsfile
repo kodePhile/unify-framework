@@ -6,12 +6,17 @@ pipeline {
   }
 
   stages {
+
     stage('Build') {
-      steps {
-        echo 'Building...'
-        sh "mvn clean install"
-        echo 'Build successful!'
-      }
+      echo 'Building Project...'
+      sh 'mvn clean install'
+      echo 'Build successful!'
+    }
+
+    stage('Update Documentation') {
+      echo 'Cloning Wiki...'
+      git 'https://github.com/kodePhile/unify-framework.wiki.git'
+      echo 'Wiki clone successful!'
     }
   }
 }
