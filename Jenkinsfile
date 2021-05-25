@@ -5,8 +5,9 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building...'
-        def mvnHome = tool name: 'Maven 3.6.3', type: 'maven'
-        sh "${mvnHome}/bin/mvn clean install -DskipTests=true"
+        withEnv( ["PATH+MAVEN=${tool name: 'Maven3.6.3', type: 'maven'}/bin"] ) {
+          sh "mvn clean install -DskipTests=true"
+        }
         echo 'Build successful!'
       }
     }
