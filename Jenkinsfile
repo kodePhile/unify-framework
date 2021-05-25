@@ -1,17 +1,17 @@
 pipeline {
   agent any
-  stages {
 
+  tools {
+    maven 'Maven3.6.3'
+  }
+
+  stages {
     stage('Build') {
       steps {
         echo 'Building...'
-        withEnv( ["PATH+MAVEN=${tool name: 'Maven3.6.3', type: 'maven'}/bin"] ) {
-          sh "mvn clean install -DskipTests=true"
-        }
+        sh "mvn clean install"
         echo 'Build successful!'
       }
     }
-
-
   }
 }
