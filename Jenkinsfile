@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'ubuntu'
+    }
+  }
 
   tools {
     maven 'Maven3.6.3'
@@ -20,14 +24,16 @@ pipeline {
     stage('Update Documentation') {
       steps {
         echo 'Cloning Wiki...'
+        echo 'Current Directory: $pwd'
         git 'https://github.com/kodePhile/unify-framework.wiki.git'
         echo 'Wiki clone successful!'
         dir('unify-framework.wiki') {
           deleteDir()
           sh '''
+            ls -lart
             cp -r ../docs .
             git add .
-            commit -m "Update documentation" && git push
+            git commit -m "Update documentation" && git push
           '''
         }
       }
